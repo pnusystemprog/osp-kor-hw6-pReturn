@@ -7,7 +7,9 @@ void searchByName();
 void deleteByName();
 
 static int count_service = 0;	// Total number of service requests
-
+char* init_password = "password";
+extern struct Contact PhoneBook[MAX];
+extern int size;
 
 int main()
 {
@@ -23,45 +25,9 @@ int main()
 		{
 			case 1: registerPhoneData(); break;	// invoke find_ID
 			case 2: printAll(); break;
-            case 3: searchByName(); break;
-            case 4: deleteByName(); break;
+			case 3: searchByName(); break;
+			case 4: deleteByName(); break;
 		}
 	} while (service != 5);	// if Exit is not entered, the loop continues
 	return 0;
-}
-
-/*****************
-** Your code..
-** This function should be implemented in register.c
-*************************/
-void registerPhoneData()
-{
-    printf("Registration\n");
-}
-
-/*****************
-** Your code..
-** This function should be implemented in search.c
-*************************/
-void printAll()
-{
-    printf("Print all contants in the PhoneBook\n");
-}
-
-/*****************
-** Your code..
-** This function should be implemented in search.c
-*************************/
-void searchByName()
-{
-    printf("Search by Name\n");
-}
-
-/*****************
-** Your code..
-** This function should be implemented in delete.c
-*************************/
-void deleteByName()
-{
-    printf("Deletion is done\n");
 }
