@@ -4,7 +4,7 @@
 extern char* init_password;
 extern struct Contact PhoneBook[MAX];
 extern int size;
-char* not_matched[3] = 
+static char* not_matched[3] = 
 {
 	"",
 	"(twice)",
@@ -20,10 +20,9 @@ void registerPhoneData(void)
 		char password_buffer[256];
 		printf("Password : ");
 		scanf("%s", password_buffer);
-		for(i = 0; password_buffer[i] != 0 || init_password[i] != 0; i++)
-		{
+		for(i = 0; password_buffer[i] != 0 && init_password[i] != 0; i++)
 			check &= password_buffer[i] == init_password[i];
-		}
+		check &= (password_buffer[i] == 0 && init_password[i] == 0);
 		if(check)
 			break;
 		else

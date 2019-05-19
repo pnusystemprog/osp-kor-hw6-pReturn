@@ -11,8 +11,9 @@ void deleteByName(void)
 	for(i = 0; i < size; i++)
 	{
 		check = 1;
-		for(j = 0; name_buffer[j] != 0; j++)
+		for(j = 0; name_buffer[j] != 0 && PhoneBook[i].Name[j] != 0; j++)
 			check &= name_buffer[j] == PhoneBook[i].Name[j];
+		check &= (name_buffer[j] == 0 && PhoneBook[i].Name[j] == 0);
 		if(check)
 		{
 			int k;
