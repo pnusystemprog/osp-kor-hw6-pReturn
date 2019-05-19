@@ -5,7 +5,7 @@ HEADER = phone.h
 all : main
 %.o : %.c
 	gcc -c $< 
-main : $(OBJS)
+main : $(OBJS) $(HEADER)
 	gcc -o main $^
 clean :
 	rm -f main $(OBJS)  
